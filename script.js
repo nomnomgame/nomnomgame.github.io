@@ -12,7 +12,6 @@ setInterval (function () {
   }
   var sliderPosition = (sliderCurrentSlide - 1) * (-sliderWidth) - (sliderWidth*2);
   sliderFrameWrapper.style.left = sliderPosition + "px";
-  console.log ("current slide", sliderCurrentSlide);
 
   if (sliderCurrentSlide == 6) {
     setTimeout (function () {
