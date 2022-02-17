@@ -19,7 +19,20 @@
 
     var url = new URL(window.location.href);
     var ref = url.searchParams.get("ref");
-    mixpanel.track('Visit', {reference: ref});
+    var redirect = url.searchParams.get("rd");
+    mixpanel.track('Visit', {reference: ref, redirect: redirect}, function() {
+      switch (redirect) {
+        case "ps":
+          window.location = "https://play.google.com/store/apps/details?id=com.nayansuthar.nomnom"
+          break;
+        case "ig":
+          window.location = "https://www.instagram.com/nom_nom_game/";
+          break;
+        case "tw":
+          window.location = "https://twitter.com/nom_nom_game";
+          break;
+      }
+    });
   </script>
 
 </head>
